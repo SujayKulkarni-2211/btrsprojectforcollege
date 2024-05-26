@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ bus[1] }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ bus[1] }}</h1>
+        <p>Seats Available: {{ bus[2] }}</p>
+        <a href="{{ url_for('reserve', bus_id=bus[0]) }}">Reserve Seats</a>
+        <a href="{{ url_for('edit_bus', bus_id=bus[0]) }}">Edit Bus</a>
+        <a href="{{ url_for('delete_bus', bus_id=bus[0]) }}">Delete Bus</a>
+    </div>
+</body>
+</html>
